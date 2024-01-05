@@ -41,6 +41,7 @@ phases.
   - Analysis:
     - Table 1:
     - Figure 4: scripts/analysis/make_plots.py
-    - RQ2 (fig. 3&4, Table I&II): scripts/analysis/ml_stages.py
-    - RQ3 (fig. 5): scripts/analysis/commit_stats
+    - RQ2 (fig. 6&7): scripts/analysis/ml_stages.py
+    - RQ2 (fig. 8&9): scripts/analysis/files_phases.py
+    - RQ3 (fig. 10): scripts/analysis/commit_stats.py
   - Results for RO3: Run scripts/filtering/12_filter_experiments.py
