@@ -1,10 +1,10 @@
 This repo contains the appendix/instruments for our paper, "A Large-Scale Study of ML-Related Python Projects".
 
-The contents of each folders are listed below:
+The contents of each folder are listed below:
 
 **data**: Contains the data ordered by filtering/ processing steps
 - **1-dependents**: Names of GitHub projects that are dependent on SciKit-Learn and TensorFlow libraries.
-- **1a-dependents_queried**: Query results of GitHub repositories dependent on SciKit-Learn and TensorFlow libraries.
+- **1a-dependents_queried**: List of projects with additional information obtained from the GitHub REST API
 - **2-forks_removed**: List of GitHub projects left after removing forks.
 - **3a-number_commits_queried**: List of projects with their number of commits.
 - **3-number_commits_filtered**: List of projects with commits count >= 50.
