@@ -1,4 +1,4 @@
-This repo contains the appendix/instruments for our paper, "Identifying Experimentation in ML/DL Systems on GitHub: An Empirical Study and Mining Heuristics".
+This repo contains the appendix/instruments for our paper, "A Large-Scale Study of ML-Related Python Projects".
 
 The contents of each folders are listed below:
 
