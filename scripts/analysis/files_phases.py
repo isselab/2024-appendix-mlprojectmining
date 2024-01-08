@@ -10,10 +10,9 @@ import tqdm
 
 """"Analze which and how many ml development phases occur in one file"""
 
-input_filepath = '../data/5-attributes/tf_skl_merged.csv'
-output_filepath = '../data/results/stages_per_file.csv'
-fig_filepath = '../data/results/stages_per_file.png'
-#This is where the cloned repos are stored
+input_filepath = '../results_test/15-n_scripts/tf_skl_merged.csv'
+output_filepath = '../results_test/analysis_out/stages_per_file.csv'
+fig_filepath = '../results_test/analysis_out/stages_per_file.png'
 local_path_main = '/mnt/volume1/mlexpmining/cloned_repos'
 N_PROCESSES = 4
 FIGSIZE=(12,6)
@@ -71,7 +70,7 @@ def get_stage_combination(item):
     return combinations_count
 
 def single_run():
-    '''Apply gest_stage_count to all repos from the .csv file. Uses a single process.'''
+    '''Apply get_n_scripts to all repos from the .csv file. Uses a single process.'''
 
     # Load data
     data_input = pd.read_csv(input_filepath)
@@ -102,7 +101,7 @@ def plot_count():
     plt.xlabel('Number of stages')
     plt.ylabel('Average number of files')
     plt.show()
-    # fig.savefig('fig/stages_per_file.pdf',bbox_inches='tight',pad_inches=0)
+    fig.savefig('paper/fig/stages_per_file.pdf',bbox_inches='tight',pad_inches=0)
 
 def count_combinations():
     '''Analyze which combinations of ml stages frequently occur together'''
@@ -117,7 +116,7 @@ def count_combinations():
 
     results_df=pd.DataFrame(results_list).fillna(0).sum().astype(int)
     print(results_df)
-    results_df.to_csv('data/results/file_stage_combination.csv',index=True)
+    results_df.to_csv('../results_test/analysis_out/file_stage_combination.csv',index=True)
 
 def count_combinations_parallel():
     # Load data
@@ -135,10 +134,10 @@ def count_combinations_parallel():
     #Save the reuslts
     results_df=pd.DataFrame(results_list).fillna(0).sum().astype(int)
     print(results_df)
-    results_df.to_csv('data/results/file_stage_combination.csv',index=True)
+    results_df.to_csv('../results_test/analysis_out/file_stage_combination.csv',index=True)
 
 def analyze_combinations():
-    data=pd.read_csv('data/results/file_stage_combination.csv',names=['stages','count'])
+    data=pd.read_csv('../results_test/analysis_out/file_stage_combination.csv',names=['stages','count'])
     data=data.sort_values(by='count',ascending=False)
     print(data[:20])
     # print(data.loc[data['count']>=100])
@@ -146,5 +145,5 @@ def analyze_combinations():
 if __name__ == "__main__":
     # single_run()
     #count_combinations_parallel()
-    analyze_combinations()
+    # analyze_combinations()
     plot_count()

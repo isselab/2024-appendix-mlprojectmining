@@ -24,10 +24,10 @@ def project_types():
     plt.xlabel('Project type')
     plt.bar_label(container,[f'{i}%' for i in data.values()])
     plt.show()
-    # fig.savefig('paper/fig/project_cat.pdf',bbox_inches='tight',pad_inches=0)
+    fig.savefig('paper/fig/project_cat.pdf',bbox_inches='tight',pad_inches=0)
 
 def boxplots():
-    data=pd.read_csv('data/6-ml_stages.csv')
+    data=pd.read_csv('results_test/17-ml_stages.csv')
 
     commits=data.loc[:,'n_commits'].to_numpy()
     contributors=data.loc[:,'n_contributors'].to_numpy()
@@ -90,8 +90,8 @@ def boxplots():
         # axis.yaxis.set_major_formatter(ScalarFormatter())
 
     plt.show()
-    # fig.savefig('fig/statistics.pdf',bbox_inches='tight',pad_inches=0)
+    fig.savefig('paper/fig/statistics.pdf',bbox_inches='tight',pad_inches=0)
 
 if __name__=="__main__":
     project_types()
-    boxplots()
+    #boxplots()

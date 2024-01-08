@@ -3,13 +3,13 @@ import ast
 import pprint
 
 
-ANALYSIS_DIR = "data/"
-RESULTS_DIR="data/5-attributes/tf_skl_merged.csv"
+ANALYSIS_DIR = "results_test/analysis_out"
+RESULTS_DIR="results_test/17-ml_stages.csv"
 
 def merge_tf_sk_projects():
-    sk_df = pd.read_csv("data/5-attributes/scikit_learn.csv")
+    sk_df = pd.read_csv("results_test/12-n_files/scikit_learn.csv")
     print(sk_df.shape)
-    tf_df = pd.read_csv("data/5-attributes/tensorflow.csv")
+    tf_df = pd.read_csv("results_test/12-n_files/tensorflow.csv")
     print(tf_df.shape)
 
     merged_df = pd.concat([sk_df, tf_df])
@@ -71,9 +71,25 @@ def wf_stage_combination_analysis():
     stages_count_df = stages_count_df.sort_values(by=["count"], ascending=False)
     stages_count_df.to_csv(f"{ANALYSIS_DIR}/stage_combination.csv", index=False)
 
+def wf_stage_files_analysis():
+    data=pd.read_csv(RESULTS_DIR)
+    print(data['Acquisition'].mean())
+    print(data['Preparation'].mean())
+    print(data['Modeling'].mean())
+    print(data['Training'].mean())
+    print(data['Evaluation'].mean())
+    print(data['Prediction'].mean())
+
+def wf_stage_share_analysis():
+    data=pd.read_csv(f'{ANALYSIS_DIR}/stage_freq.csv')
+    n_repos=len(pd.read_csv(RESULTS_DIR))
+    data['share']=data['count']/n_repos
+    print(data)
 
 if __name__ == "__main__":
     #merge_tf_sk_projects()
-    get_stats()
-    #wf_stage_analysis()
-    wf_stage_combination_analysis()
+    #get_stats()
+    # wf_stage_analysis()
+    # wf_stage_combination_analysis()
+    # wf_stage_files_analysis()
+    wf_stage_share_analysis()
