@@ -36,11 +36,10 @@ phases.
 
 **Reproducing the results from the paper:**
   - Obtaining the data from GitHub: Execute scripts/data_acquisition/01_get_dependants.py
-  - Filtering the data: Execute the Python scripts in scripts/filtering in the given order, except for the last one (12_filter_experiments.py)
+  - Filtering the data: Execute the Python scripts in scripts/filtering in the given order
   - Additional processing required for results to RQ3: Run scripts/data_processing/commit_stages.py
   - Analysis:
-    - General Statistics (Table 1 and fig. 4): scripts/analysis/make_plots.py
+    - RQ1 (Table 1 and fig. 4&5): scripts/analysis/make_plots.py
     - RQ2 (fig. 6&7): scripts/analysis/ml_stages.py
     - RQ2 (fig. 8&9): scripts/analysis/files_phases.py
-    - RQ3 (fig. 10): scripts/analysis/commit_stats.py
-  - Results for RO3: Run scripts/filtering/12_filter_experiments.py
+    - RQ3 (fig. 10&11): scripts/analysis/commit_stats.py
