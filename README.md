@@ -39,8 +39,7 @@ phases.
   - Filtering the data: Execute the Python scripts in scripts/filtering in the given order, except for the last one (12_filter_experiments.py)
   - Additional processing required for results to RQ3: Run scripts/data_processing/commit_stages.py
   - Analysis:
-    - Table 1:
-    - Figure 4: scripts/analysis/make_plots.py
+    - General Statistics (Table 1 and fig. 4): scripts/analysis/make_plots.py
     - RQ2 (fig. 6&7): scripts/analysis/ml_stages.py
     - RQ2 (fig. 8&9): scripts/analysis/files_phases.py
     - RQ3 (fig. 10): scripts/analysis/commit_stats.py
